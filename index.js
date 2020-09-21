@@ -2,32 +2,46 @@
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
 
+let votingAge = 21;
 
+console.log(votingAge > 18);
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
+let taskB = 100;
 
+let newValue = taskB - 4;
+
+console.log(newValue);
 
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
+let taskC = "1999";
 
+Number(taskC);
 
+console.log(taskC);
 
 
 //Task d: Write a function to multiply a*b 
 
-
-
+function myFunction(a, b) {
+  return a * b;
+}
+ 
 
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
+function dogYears(a) {
+  console.log(a * 7);
+}
 
-
+dogYears(21);
 
 
 
@@ -60,13 +74,31 @@
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
-  
+ function game(option) {
+  let comp = Math.floor(Math.random() * 3);
+  const compChoice = ["scissors", "paper", "rock"];
+  const choice = compChoice[comp];
+
+  console.log("Computer picked " + choice);
+
+  if ((choice === "scissors" && option === "paper") || (choice === "paper" && option === "rock") || (choice === "rock" && option === "scissors") ) {
+    return "You lose.";
+  } else if ((choice === "scissors" && option === "rock") || (choice === "paper" && option === "scissors") || (choice === "rock" && option === "paper")) {
+    return "You win!";
+  }
+}
+
+console.log(game("rock"));
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+function kmConverter(km) {
+  return km * 0.621371
+}
+
+console.log(kmConverter(16));
 
 
 
@@ -74,7 +106,11 @@
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
 
+function feetConverter(ft) {
+  return ft * 30.48
+}
 
+console.log(feetConverter(4));
 
 
 /************************************************************** Task 6 **************************************************************/
@@ -83,7 +119,14 @@
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
 
+function annoyingSong(numBottles){
+  for(let i = numBottles; i > 0; i--) {
+      const leftOver = i - 1;
+      console.log(i + " bottles of soda on the wall, " + i + " bottles of soda, take one down pass it around " + leftOver + " bottles of soda on the wall");
+  }
+}
 
+annoyingSong(45);
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -96,7 +139,22 @@
 //and anything below 60 should be F
   
 
-  
+function gradeCalculator(percent) {
+  if(percent >= 90){
+      return "A";
+  }else if(percent >= 80 && percent < 90){
+      return "B";
+  }else if(percent >= 70 && percent < 80){
+      return "C";
+  }else if(percent >= 60 && percent < 70){
+      return "D";
+  }else{
+      return "F"
+  }
+}
+
+console.log(gradeCalculator(75));
+
   
 
 /************************************************************** Stretch **************************************************************/
